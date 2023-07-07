@@ -1,9 +1,13 @@
+// Creates a 16x16 grid on the page
 function createGrid() {
     const gridContainer = document.querySelector('#gridcontainer'); 
-    const grid = document.createElement('div');
-    grid.classList.add('grid');
+    const gridArray = [];
 
-    gridContainer.appendChild(grid);
+    for (let i = 0; i < 16; i++) {
+        gridArray[i] = document.createElement('div');
+        gridArray[i].classList.add('grid');
+        gridContainer.appendChild(gridArray[i]);
+    }
 }
 
 createGrid();
