@@ -20,4 +20,6 @@ grid.forEach((div) => {
     })
 })
 
+const pixelSlider = document.getElementById('pixel-slider');
+//console.log(pixelSlider.value);
 
