@@ -5,7 +5,7 @@ body {
     align-items: center;
 }
 
-#gridcontainer {
+/* #gridcontainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -13,14 +13,32 @@ body {
     height: auto;
     border-style: solid;
     border-width: 1px;
+} */
+
+#gridcontainer {
+    margin: auto;
+	box-sizing: border-box;
+	display: grid;
+	resize: both;
+	overflow: auto;
+    width: 600px;
+    height: 600px;
+    grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+    border: 1px solid rgb(76, 219, 219);
+	background-color: rgb(241, 250, 247);
+	gap: 0.08em;
+	border-radius: 1%;
+	padding: 0.15em;
+    
 }
 
-.grid {
+/* .grid {
     width: 100px;
     height: 100px;
     border-style: solid;
     border-width: 1px;
-}
+} */
 
 .slider {
     -webkit-appearance: none;
