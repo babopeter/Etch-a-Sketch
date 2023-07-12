@@ -26,20 +26,10 @@ function resetGrid() {
     }
 }
 
-// change the size of the divs
-// this doesn't work
-function resizeGrid(divSize) {
-    const grid = document.querySelectorAll('.grid');
-    grid.forEach((div) => {
-        div.style.width = divSize;
-        div.style.width = divSize;
-    })
-}
-
 // variables
 const gridContainer = document.querySelector('#gridcontainer'); 
 const gridArray = [];
-let gridSize = 16;
+let gridSize = 4;
 
 
 createGrid();
@@ -62,6 +52,5 @@ pixelSlider.addEventListener('mouseup', function() {
     resetGrid();
     changeSize();
     createGrid();
-    resizeGrid(gridSize);
     paintGrid();
 })
