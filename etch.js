@@ -1,9 +1,6 @@
 // Creates a 16x16 grid on the page
 function createGrid() {
     for (let i = 0; i < gridSize * gridSize; i++) {
-        //gridArray[i] = document.createElement('div');
-        //gridArray[i].classList.add('grid');
-        //gridContainer.appendChild(gridArray[i]);
         let gridItem = document.createElement('div');
         gridItem.classList.add('grid');
         gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -18,8 +15,6 @@ function changeSize() {
     console.log(gridSize);
 }
 
-// find a way to reset the grid
-// grid is reset but mousover eventlistener not active
 function resetGrid() {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.firstChild);
@@ -46,6 +41,12 @@ function paintGrid(){
     })
 }
 
+// display slider value
+function showSliderValue() {
+    document.getElementById('slider-output').innerHTML = 
+    `${pixelSlider.value} X ${pixelSlider.value}`;
+}
+
 // listen to slider
 const pixelSlider = document.getElementById('pixel-slider');
 pixelSlider.addEventListener('mouseup', function() {
@@ -53,4 +54,5 @@ pixelSlider.addEventListener('mouseup', function() {
     changeSize();
     createGrid();
     paintGrid();
+    showSliderValue();
 })
