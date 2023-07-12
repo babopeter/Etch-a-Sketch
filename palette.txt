@@ -1,0 +1,6 @@
+/* CSS HEX */
+--poppy: #df2935ff;
+--paynes-gray: #576066ff;
+--cosmic-latte: #f8f4e3ff;
+--princeton-orange: #ff9505ff;
+--vivid-sky-blue: #44ccffff;
