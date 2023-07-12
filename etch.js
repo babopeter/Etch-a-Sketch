@@ -36,7 +36,7 @@ function paintGrid(){
     const grid = document.querySelectorAll('.grid');
     grid.forEach((div) => {
         div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = '#4000ff';
+            div.style.backgroundColor = '#ff9505ff';
         })
     })
 }
