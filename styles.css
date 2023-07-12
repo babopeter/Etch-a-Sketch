@@ -5,16 +5,6 @@ body {
     align-items: center;
 }
 
-/* #gridcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 408px;
-    height: auto;
-    border-style: solid;
-    border-width: 1px;
-} */
-
 #gridcontainer {
     margin: auto;
 	box-sizing: border-box;
@@ -32,13 +22,6 @@ body {
 	padding: 0.15em;
     
 }
-
-/* .grid {
-    width: 100px;
-    height: 100px;
-    border-style: solid;
-    border-width: 1px;
-} */
 
 .slider {
     -webkit-appearance: none;
@@ -62,4 +45,10 @@ body {
     height: 25px;
     background: blue;
     cursor: pointer;
+}
+
+.slidercontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
