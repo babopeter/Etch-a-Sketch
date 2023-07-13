@@ -48,9 +48,9 @@ function showSliderValue() {
     `${pixelSlider.value} X ${pixelSlider.value}`;
 }
 
-// listen to slider
+// listen to slider value change
 const pixelSlider = document.getElementById('pixel-slider');
-pixelSlider.addEventListener('mouseup', function() {
+pixelSlider.addEventListener('input', function() {
     resetGrid();
     changeSize();
     createGrid();
@@ -58,7 +58,7 @@ pixelSlider.addEventListener('mouseup', function() {
     showSliderValue();
 });
 
-// Add reset button
+// reset grid on button click
 const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', function() {
     resetGrid();
