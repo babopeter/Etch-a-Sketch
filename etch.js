@@ -27,6 +27,7 @@ const gridArray = [];
 let gridSize = 4;
 
 
+
 createGrid();
 paintGrid();
 
@@ -55,4 +56,18 @@ pixelSlider.addEventListener('mouseup', function() {
     createGrid();
     paintGrid();
     showSliderValue();
-})
+});
+
+// Add reset button
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function() {
+    resetGrid();
+    createGrid();
+    paintGrid();
+});
+
+
+// Implement random color change function
+// Add buttons to change between single and random colors
+// Add color picker for single colors
+// Add darkening effect
