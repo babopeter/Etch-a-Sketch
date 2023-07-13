@@ -7,21 +7,20 @@ body {
 }
 
 #gridcontainer {
-    margin: auto;
+  margin: auto;
 	box-sizing: border-box;
 	display: grid;
 	resize: both;
 	overflow: auto;
-    width: 600px;
-    height: 600px;
-    grid-template-columns: repeat(4, 1fr);
+  width: 600px;
+  height: 600px;
+  grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(4, 1fr);
-    border: 10px solid #576066;
+  border: 10px solid #576066;
 	background-color: #F8F4E3;
 	gap: 0.08em;
 	border-radius: 1%;
 	padding: 0.15em;
-    
 }
 
 .grid {

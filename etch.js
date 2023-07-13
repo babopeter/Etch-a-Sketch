@@ -25,21 +25,32 @@ function resetGrid() {
 const gridContainer = document.querySelector('#gridcontainer'); 
 const gridArray = [];
 let gridSize = 4;
-let randomMode = false; 
+let randomMode = false;
+let mouseDown = false; 
 
 
 
 createGrid();
 paintNormal();
 
+window.onmousedown = () =>(mouseDown = true)
+window.onmouseup = () => (mouseDown = false)
 
 // paint to random color
 function paintRandom(){
     const grid = document.querySelectorAll('.grid');
+    //const randomColor = Math.floor(Math.random()*16777215).toString(16);
     grid.forEach((div) => {
         div.addEventListener('mouseover', () => {
+            if (mouseDown == true) {
             const randomColor = Math.floor(Math.random()*16777215).toString(16);
             div.style.backgroundColor = '#' + randomColor;
+            }
+            div.onmousedown = () => {
+                const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                div.style.backgroundColor = '#' + randomColor;
+                //mouseDown = true;
+            }
         })
     })
 }
@@ -49,7 +60,12 @@ function paintNormal(){
     const grid = document.querySelectorAll('.grid');
     grid.forEach((div) => {
         div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = '#ff9505ff';
+            if (mouseDown == true) {
+                div.style.backgroundColor = '#ff9505ff';
+            }
+            div.onmousedown = () => {
+                div.style.backgroundColor = '#ff9505ff';
+            }
         })
     })
 }
@@ -98,7 +114,7 @@ normalButton.addEventListener('click', function() {
     paintNormal();
 })
 
-// Implement random color change function
-// Add buttons to change between single and random colors
+
+// Add hold mouse button painting
 // Add color picker for single colors
 // Add darkening effect
