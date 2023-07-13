@@ -25,11 +25,12 @@ function resetGrid() {
 const gridContainer = document.querySelector('#gridcontainer'); 
 const gridArray = [];
 let gridSize = 4;
+let randomMode = false; 
 
 
 
 createGrid();
-paintRandom();
+paintNormal();
 
 
 // paint to random color
@@ -65,7 +66,11 @@ pixelSlider.addEventListener('input', function() {
     resetGrid();
     changeSize();
     createGrid();
-    paintRandom();
+    if (!randomMode) {
+        paintNormal()
+    } else {
+        paintRandom();
+    }
     showSliderValue();
 });
 
@@ -74,8 +79,24 @@ const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', function() {
     resetGrid();
     createGrid();
-    paintRandom();
+    if (!randomMode) {
+        paintNormal()
+    } else {
+        paintRandom();
+    }
 });
+
+const randomButton = document.getElementById('random');
+randomButton.addEventListener('click', function() {
+    randomMode = true;
+    paintRandom();
+})
+
+const normalButton = document.getElementById('normal');
+normalButton.addEventListener('click', function() {
+    randomMode = false;
+    paintNormal();
+})
 
 // Implement random color change function
 // Add buttons to change between single and random colors
