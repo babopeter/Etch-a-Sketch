@@ -29,17 +29,26 @@ let gridSize = 4;
 
 
 createGrid();
-paintGrid();
+paintRandom();
 
 
-// listening to mousover
-function paintGrid(){
+// paint to random color
+function paintRandom(){
     const grid = document.querySelectorAll('.grid');
     grid.forEach((div) => {
         div.addEventListener('mouseover', () => {
-            //div.style.backgroundColor = '#ff9505ff';
             const randomColor = Math.floor(Math.random()*16777215).toString(16);
             div.style.backgroundColor = '#' + randomColor;
+        })
+    })
+}
+
+// paint to single color
+function paintNormal(){
+    const grid = document.querySelectorAll('.grid');
+    grid.forEach((div) => {
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = '#ff9505ff';
         })
     })
 }
@@ -56,7 +65,7 @@ pixelSlider.addEventListener('input', function() {
     resetGrid();
     changeSize();
     createGrid();
-    paintGrid();
+    paintRandom();
     showSliderValue();
 });
 
@@ -65,14 +74,8 @@ const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', function() {
     resetGrid();
     createGrid();
-    paintGrid();
+    paintRandom();
 });
-
-function generateRandomColor() {
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    div.style.backgroundColor = '#' + randomColor;
-    
-}
 
 // Implement random color change function
 // Add buttons to change between single and random colors
