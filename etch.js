@@ -37,7 +37,9 @@ function paintGrid(){
     const grid = document.querySelectorAll('.grid');
     grid.forEach((div) => {
         div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = '#ff9505ff';
+            //div.style.backgroundColor = '#ff9505ff';
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            div.style.backgroundColor = '#' + randomColor;
         })
     })
 }
@@ -66,6 +68,11 @@ resetButton.addEventListener('click', function() {
     paintGrid();
 });
 
+function generateRandomColor() {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    div.style.backgroundColor = '#' + randomColor;
+    
+}
 
 // Implement random color change function
 // Add buttons to change between single and random colors
