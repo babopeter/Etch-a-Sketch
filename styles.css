@@ -19,6 +19,7 @@ body {
   border: 10px solid #576066;
 	background-color: #576066;
   grid-gap: 1px;
+  resize: none;
 }
 
 .grid {
