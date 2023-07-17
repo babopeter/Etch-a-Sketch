@@ -1,3 +1,16 @@
+// variables
+const gridContainer = document.querySelector('#gridcontainer');
+const resetButton = document.getElementById('reset');
+const randomButton = document.getElementById('random');
+const colorPicker = document.getElementById('color');
+const gridArray = [];
+let gridSize = 4;
+let randomMode = false;
+let mouseDown = false;
+
+createGrid();
+paintGrid();
+
 // Creates a 16x16 grid on the page
 function createGrid() {
     for (let i = 0; i < gridSize * gridSize; i++) {
@@ -26,7 +39,8 @@ function paintGrid(e) {
         if (randomMode) {
             e.target.style.backgroundColor = '#' + randomColor;
         } else if (!randomMode) {
-            e.target.style.backgroundColor = '#ff9505ff';
+            //e.target.style.backgroundColor = '#ff9505ff';
+            e.target.style.backgroundColor = colorPicker.value;
         }
         
     }
@@ -48,31 +62,19 @@ pixelSlider.addEventListener('input', function () {
 });
 
 // reset grid on button click
-const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', function () {
     resetGrid();
     createGrid();
 });
 
-const randomButton = document.getElementById('random');
 randomButton.addEventListener('click', function () {
     randomMode = true;
 })
 
-const normalButton = document.getElementById('normal');
-normalButton.addEventListener('click', function () {
+
+colorPicker.addEventListener('click', function () {
     randomMode = false;
 })
-
-// variables
-const gridContainer = document.querySelector('#gridcontainer');
-const gridArray = [];
-let gridSize = 4;
-let randomMode = false;
-let mouseDown = false;
-
-createGrid();
-paintGrid();
 
 document.body.addEventListener('mousedown', function(event) {
     mouseDown = true;
