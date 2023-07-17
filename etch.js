@@ -12,7 +12,6 @@ function createGrid() {
 // change the size based on the slider's value
 function changeSize() {
     gridSize = pixelSlider.value;
-    console.log(gridSize);
 }
 
 function resetGrid() {
@@ -21,100 +20,70 @@ function resetGrid() {
     }
 }
 
-// variables
-const gridContainer = document.querySelector('#gridcontainer'); 
-const gridArray = [];
-let gridSize = 4;
-let randomMode = false;
-let mouseDown = false; 
-
-
-
-createGrid();
-paintNormal();
-
-window.onmousedown = () =>(mouseDown = true)
-window.onmouseup = () => (mouseDown = false)
-
-// paint to random color
-function paintRandom(){
-    const grid = document.querySelectorAll('.grid');
-    //const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    grid.forEach((div) => {
-        div.addEventListener('mouseover', () => {
-            if (mouseDown == true) {
-            const randomColor = Math.floor(Math.random()*16777215).toString(16);
-            div.style.backgroundColor = '#' + randomColor;
-            }
-            div.onmousedown = () => {
-                const randomColor = Math.floor(Math.random()*16777215).toString(16);
-                div.style.backgroundColor = '#' + randomColor;
-                //mouseDown = true;
-            }
-        })
-    })
-}
-
-// paint to single color
-function paintNormal(){
-    const grid = document.querySelectorAll('.grid');
-    grid.forEach((div) => {
-        div.addEventListener('mouseover', () => {
-            if (mouseDown == true) {
-                div.style.backgroundColor = '#ff9505ff';
-            }
-            div.onmousedown = () => {
-                div.style.backgroundColor = '#ff9505ff';
-            }
-        })
-    })
-}
+function paintGrid(e) {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    if (mouseDown && (e.target.parentElement == gridcontainer)) {
+        if (randomMode) {
+            e.target.style.backgroundColor = '#' + randomColor;
+        } else if (!randomMode) {
+            e.target.style.backgroundColor = '#ff9505ff';
+        }
+        
+    }
+};
 
 // display slider value
 function showSliderValue() {
-    document.getElementById('slider-output').innerHTML = 
-    `${pixelSlider.value} X ${pixelSlider.value}`;
+    document.getElementById('slider-output').innerHTML =
+        `${pixelSlider.value} X ${pixelSlider.value}`;
 }
 
 // listen to slider value change
 const pixelSlider = document.getElementById('pixel-slider');
-pixelSlider.addEventListener('input', function() {
+pixelSlider.addEventListener('input', function () {
     resetGrid();
     changeSize();
     createGrid();
-    if (!randomMode) {
-        paintNormal()
-    } else {
-        paintRandom();
-    }
     showSliderValue();
 });
 
 // reset grid on button click
 const resetButton = document.getElementById('reset');
-resetButton.addEventListener('click', function() {
+resetButton.addEventListener('click', function () {
     resetGrid();
     createGrid();
-    if (!randomMode) {
-        paintNormal()
-    } else {
-        paintRandom();
-    }
 });
 
 const randomButton = document.getElementById('random');
-randomButton.addEventListener('click', function() {
+randomButton.addEventListener('click', function () {
     randomMode = true;
-    paintRandom();
 })
 
 const normalButton = document.getElementById('normal');
-normalButton.addEventListener('click', function() {
+normalButton.addEventListener('click', function () {
     randomMode = false;
-    paintNormal();
 })
 
+// variables
+const gridContainer = document.querySelector('#gridcontainer');
+const gridArray = [];
+let gridSize = 4;
+let randomMode = false;
+let mouseDown = false;
 
-// Add hold mouse button painting
+createGrid();
+paintGrid();
+
+document.body.addEventListener('mousedown', function() {
+    mouseDown = true;
+    paintGrid;
+});
+
+document.body.addEventListener('mouseup', function() {
+    mouseDown = false;
+});
+
+gridContainer.addEventListener('mouseover', paintGrid);
+
 // Add color picker for single colors
 // Add darkening effect
