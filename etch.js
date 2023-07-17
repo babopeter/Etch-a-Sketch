@@ -74,9 +74,9 @@ let mouseDown = false;
 createGrid();
 paintGrid();
 
-document.body.addEventListener('mousedown', function() {
+document.body.addEventListener('mousedown', function(event) {
     mouseDown = true;
-    paintGrid;
+    paintGrid(event);
 });
 
 document.body.addEventListener('mouseup', function() {
