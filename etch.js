@@ -3,10 +3,12 @@ const gridContainer = document.querySelector('#gridcontainer');
 const resetButton = document.getElementById('reset');
 const randomButton = document.getElementById('random');
 const colorPicker = document.getElementById('color');
+const eraserButton = document.getElementById('eraser');
 const gridArray = [];
 let gridSize = 4;
 let randomMode = false;
 let mouseDown = false;
+let eraserMode = false;
 
 createGrid();
 paintGrid();
@@ -38,9 +40,11 @@ function paintGrid(e) {
     if (mouseDown && (e.target.parentElement == gridcontainer)) {
         if (randomMode) {
             e.target.style.backgroundColor = '#' + randomColor;
-        } else if (!randomMode) {
-            //e.target.style.backgroundColor = '#ff9505ff';
+        } else if (!randomMode && !eraserMode) {
             e.target.style.backgroundColor = colorPicker.value;
+        } else if (eraserMode) {
+            // eraser mode hardcoded with background color
+            e.target.style.backgroundColor = '#F8F4E3';
         }
         
     }
@@ -69,11 +73,18 @@ resetButton.addEventListener('click', function () {
 
 randomButton.addEventListener('click', function () {
     randomMode = true;
+    eraserMode = false;
 })
 
 
 colorPicker.addEventListener('click', function () {
     randomMode = false;
+    eraserMode = false;
+})
+
+eraserButton.addEventListener('click', function() {
+    randomMode = false;
+    eraserMode = true;
 })
 
 document.body.addEventListener('mousedown', function(event) {
@@ -87,5 +98,7 @@ document.body.addEventListener('mouseup', function() {
 
 gridContainer.addEventListener('mouseover', paintGrid);
 
-// Add color picker for single colors
+
+// Add eraser
 // Add darkening effect
+// Arrange and improve UI
