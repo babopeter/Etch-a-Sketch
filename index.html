@@ -12,16 +12,18 @@
     <h1>Etch A Sketch</h1>
     <div class="container">
         <div class="buttoncontainer">
-            <h2>Color modes</h2>
+            <!-- <h2>Color modes</h2> -->
             <div id="swatch">
-                <input type="color" id="color" name="Color" value="#fcba03">
+                <input type="color" id="color" name="Color" value="#455EB5">
                 <h1>Pick</h1>
                 <h2>Your color</h2>
             </div>
-            <div class="coloroptions"></div>
-            <button id="random">Randomized</button>
-            <button id="eraser">Eraser</button>
-            <button id="reset">Reset grid</button>
+            <div class="coloroptions">
+                <h2>Other modes</h2>
+                <button id="random">Randomized</button>
+                <button id="eraser">Eraser</button>
+                <button id="reset">Reset grid</button>
+            </div>
             <div class="slidercontainer">
                 <h2>Adjust grid</h2>
                 <input type="range" min="4" max="64" value="4" step="4" id="pixel-slider">
