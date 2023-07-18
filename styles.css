@@ -7,12 +7,18 @@ body {
   align-items: center;
 }
 
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .container {
   display: flex;
 }
 
 .buttoncontainer {
   background-color: #B8C4BB;
+  border-radius: 25px;
   display: flex;
   padding: 50px;
   margin: 50px;
