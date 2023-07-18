@@ -1,6 +1,6 @@
 body {
   font: 2.2vh Helvetica-Neue, Helvetica, sans-serif;
-  background-color: #F8F4E3;
+  background-color: #E8F7EE;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,8 +12,10 @@ body {
 }
 
 .buttoncontainer {
+  background-color: #B8C4BB;
   display: flex;
   padding: 50px;
+  margin: 50px;
   width: 200px;
   flex-direction: column;
 }
@@ -73,14 +75,14 @@ body {
   height: 600px;
   grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(4, 1fr);
-  border: 10px solid #576066;
-	background-color: #576066;
+  border: 10px solid #B8C4BB;
+	background-color: #B8C4BB;
   grid-gap: 1px;
   resize: none;
 }
 
 .grid {
-    background-color: #F8F4E3;
+    background-color: #E8F7EE;
 }
 
 /*Slider Customization */
@@ -175,7 +177,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 /* Color picker costumization */
 #swatch{
-  background: white;
+  background: #E8F7EE;
   box-shadow: 1em 1em 1em rgba(0, 0, 0, .1);
   display: flex;
   flex-direction: column;
