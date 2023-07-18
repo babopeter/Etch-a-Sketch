@@ -18,6 +18,44 @@ body {
   flex-direction: column;
 }
 
+.coloroptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coloroptions button {
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.coloroptions button {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .coloroptions button {
+    padding: 0 2.6rem;
+  }
+}
+
 .slidercontainer {
   display: flex;
   flex-direction: column;
@@ -72,7 +110,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 26px;
   width: 26px;
   border-radius: 15px;
-  background: #ff9505ff;
+  background: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -8.5px;
@@ -95,7 +133,7 @@ input[type=range]::-moz-range-thumb {
   height: 26px;
   width: 26px;
   border-radius: 15px;
-  background: #ff9505ff;
+  background: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   cursor: pointer;
 }
 input[type=range]::-ms-track {
@@ -125,7 +163,7 @@ input[type=range]::-ms-thumb {
   height: 26px;
   width: 26px;
   border-radius: 15px;
-  background: #ff9505ff;
+  background: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   cursor: pointer;
 }
 input[type=range]:focus::-ms-fill-lower {
@@ -135,6 +173,7 @@ input[type=range]:focus::-ms-fill-upper {
   background: #576066ff;
 }
 
+/* Color picker costumization */
 #swatch{
   background: white;
   box-shadow: 1em 1em 1em rgba(0, 0, 0, .1);
@@ -163,7 +202,7 @@ input[type="color"] {
   background: none;
   border: 0;
   cursor: pointer;
-  height: 15em;
+  height: 12em;
   padding: 0;
   width: 15em;
 }
