@@ -44,7 +44,7 @@ function paintGrid(e) {
             e.target.style.backgroundColor = colorPicker.value;
         } else if (eraserMode) {
             // eraser mode hardcoded with background color
-            e.target.style.backgroundColor = '#F8F4E3';
+            e.target.style.backgroundColor = '#E8F7EE';
         }
         
     }
@@ -98,7 +98,5 @@ document.body.addEventListener('mouseup', function() {
 
 gridContainer.addEventListener('mouseover', paintGrid);
 
-// Change random color effect to rainbow
-// Add darkening effect
 // Arrange and improve UI
     // Button toggled should be visible
