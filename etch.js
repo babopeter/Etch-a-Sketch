@@ -98,7 +98,7 @@ document.body.addEventListener('mouseup', function() {
 
 gridContainer.addEventListener('mouseover', paintGrid);
 
-
-// Add eraser
+// Change random color effect to rainbow
 // Add darkening effect
 // Arrange and improve UI
+    // Button toggled should be visible
