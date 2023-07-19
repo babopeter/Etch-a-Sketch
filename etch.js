@@ -10,8 +10,11 @@ let randomMode = false;
 let mouseDown = false;
 let eraserMode = false;
 
-createGrid();
-paintGrid();
+window.onload = () => {
+    createGrid();
+    paintGrid();
+  };
+
 
 // Creates a 16x16 grid on the page
 function createGrid() {
@@ -108,6 +111,3 @@ document.body.addEventListener('mouseup', function() {
 });
 
 gridContainer.addEventListener('mouseover', paintGrid);
-
-// Arrange and improve UI
-    // Button toggled should be visible
