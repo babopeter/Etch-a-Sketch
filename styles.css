@@ -17,7 +17,7 @@ h2 {
 }
 
 .buttoncontainer {
-  background-color: #B8C4BB;
+  background-color: #d6e3db;
   border-radius: 25px;
   display: flex;
   padding: 50px;
@@ -108,7 +108,7 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 12px;
   cursor: pointer;
   box-shadow: 0px 0px 0px #000000;
-  background: #576066ff;
+  background: #96a5af;
   border-radius: 10px;
   border: 1px solid #010101;
 }
@@ -124,14 +124,14 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -8.5px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #576066ff;
+  background: #96a5af;
 }
 input[type=range]::-moz-range-track {
   width: 100%;
   height: 12px;
   cursor: pointer;
   box-shadow: 0px 0px 0px #000000;
-  background: #576066ff;
+  background: #96a5af;
   border-radius: 10px;
   border: 1px solid #010101;
 }
@@ -153,13 +153,13 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-  background: #576066ff;
+  background: #96a5af;
   border: 1px solid #010101;
   border-radius: 20px;
   box-shadow: 0px 0px 0px #000000;
 }
 input[type=range]::-ms-fill-upper {
-  background: #576066ff;
+  background: #96a5af;
   border: 1px solid #010101;
   border-radius: 20px;
   box-shadow: 0px 0px 0px #000000;
@@ -175,10 +175,10 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #576066ff;
+  background: #96a5af;
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: #576066ff;
+  background: #96a5af;
 }
 
 /* Color picker costumization */
@@ -195,11 +195,13 @@ input[type=range]:focus::-ms-fill-upper {
 
 #swatch h1{
   margin: 0;
+  padding-left: 10px;
   text-transform: uppercase;
 }
 
 #swatch h2{
   font-weight: normal;
+  padding-left: 10px;
   margin: 0;
 }
 
@@ -238,3 +240,13 @@ input[type="color"] {
   padding: 0;
 }
 
+button:active {
+  border-style: solid;
+  border-color: #000000;
+  box-shadow:  1px 2px #000000;
+  border-width: 2px;
+}
+
+#random:active {
+
+}
