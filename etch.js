@@ -74,17 +74,28 @@ resetButton.addEventListener('click', function () {
 randomButton.addEventListener('click', function () {
     randomMode = true;
     eraserMode = false;
+    highlightButton(randomButton, eraserButton, colorPicker);
 })
+
+function highlightButton(button1, button2, button3) {
+    button1.style.border = 'solid';
+    button1.style.borderColor = '#000000';
+    button2.style.border = 'none';
+    button3.style.border = 'none';
+}
+
 
 
 colorPicker.addEventListener('click', function () {
     randomMode = false;
     eraserMode = false;
+    highlightButton(colorPicker, randomButton, eraserButton);
 })
 
 eraserButton.addEventListener('click', function() {
     randomMode = false;
     eraserMode = true;
+    highlightButton(eraserButton, randomButton, colorPicker);
 })
 
 document.body.addEventListener('mousedown', function(event) {
